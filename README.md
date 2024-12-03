@@ -1,6 +1,6 @@
 # SCP-Seedbox-Installer
 
-This script is designed to automate the installation and configuration of a dedicated seedbox with `qbittorrent-nox` on a Debian-based system. It installs essential packages, configures `qBittorrent`, and sets up your environment for efficient torrenting.
+This script is designed to automate the installation and configuration of a dedicated seedbox with `qbittorrent-nox` on a Debian-based system, specifically when using the Netcup SCP control panel to install an image.
 
 ## Features
 
@@ -14,7 +14,14 @@ This script is designed to automate the installation and configuration of a dedi
 
 ### Prerequisites
 
-- A fresh Debian-based system (Debian 11/12 or Ubuntu)
+- A fresh Debian-based system (Debian 11/12 or Ubuntu) installed via Netcup SCP control panel
 - `root` privileges
 
 ### Steps
+
+1. Run the following command to download and execute the installation script directly from the Netcup SCP control console:
+   ```bash
+   #!/bin/bash
+
+   # 下载并执行远程脚本
+   bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh)
