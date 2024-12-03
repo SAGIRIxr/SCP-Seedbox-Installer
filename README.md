@@ -1,11 +1,15 @@
 # SCP-Seedbox-Installer
 
-This script is designed to automate the installation and configuration of a dedicated seedbox with `qbittorrent-nox` on a Debian-based system, specifically when using the Netcup SCP control panel to install an image.
+This script is designed to automate the installation and configuration of a dedicated seedbox with `qbittorrent-nox` on a Debian-based system, specifically when using the Netcup **Server Control Panel (SCP)** to install an image.
 
 ## Features
 
 - Installs essential tools: `curl`, `htop`, and `vnstat`
-- Configures `qBittorrent` with custom settings (e.g., Web UI port, download pre-allocation, etc.)
+- Configures `qBittorrent` with custom settings:
+  - Default **username**: `sagiri`
+  - Default **password**: `sagirisagiri`
+  - Default **Web UI port**: `18080`
+  - Default **connection port**: `55000`
 - Sets up system to automatically start `qbittorrent-nox` on boot
 - Adjusts filesystem settings for optimized performance
 - Includes an option for automatic system reboot after installation
@@ -14,7 +18,7 @@ This script is designed to automate the installation and configuration of a dedi
 
 ### Prerequisites
 
-- A fresh Debian-based system (Debian 11/12 or Ubuntu) installed via Netcup SCP control panel
+- A fresh Debian-based system (Debian 11/12 or Ubuntu) installed via Netcup **Server Control Panel (SCP)**
 - `root` privileges
 
 ### Steps
