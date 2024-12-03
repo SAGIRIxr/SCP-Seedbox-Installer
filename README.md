@@ -1,6 +1,3 @@
-Here's the improved Markdown documentation for your SCP-Seedbox-Installer script, including both English and Chinese versions.
-
----
 
 ## SCP-Seedbox-Installer
 
