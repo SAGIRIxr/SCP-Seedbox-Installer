@@ -1,3 +1,5 @@
+For the Chinese version, please refer to [简体中文](https://github.com/SAGIRIxr/SCP-Seedbox-Installer/blob/main/README_zh.md).
+
 
 ## SCP-Seedbox-Installer
 
@@ -58,6 +60,3 @@ Before running the script, you may need to modify the following variables in the
 - `{webui_port}`: Set the Web UI port. Example: `18080`
 - `{connection_port}`: Set the connection port. Example: `55000`
 - `{cache}`: Set the disk cache value. Example: `1024`
-
-
-For the Chinese version, please refer to [简体中文](https://github.com/SAGIRIxr/SCP-Seedbox-Installer/blob/main/README_zh.md).
