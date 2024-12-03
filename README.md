@@ -1,8 +1,12 @@
-# SCP-Seedbox-Installer
+Here's the improved Markdown documentation for your SCP-Seedbox-Installer script, including both English and Chinese versions.
 
-This script is designed to automate the installation and configuration of a dedicated seedbox with `qbittorrent-nox` on a Debian-based system, specifically when using the Netcup **Server Control Panel (SCP)** to install an image.
+---
 
-## Features
+## SCP-Seedbox-Installer
+
+This script automates the installation and configuration of a dedicated seedbox with `qbittorrent-nox` on a Debian-based system, specifically when using the Netcup **Server Control Panel (SCP)** to install an image.
+
+### Features
 
 - Installs essential tools: `curl`, `htop`, and `vnstat`
 - Configures `qBittorrent` with custom settings:
@@ -10,20 +14,34 @@ This script is designed to automate the installation and configuration of a dedi
   - Default **password**: `sagirisagiri`
   - Default **Web UI port**: `18080`
   - Default **connection port**: `55000`
+  - **Disk cache**: `-1` (auto)
 - Sets up system to automatically start `qbittorrent-nox` on boot
 - Adjusts filesystem settings for optimized performance
 - Includes an option for automatic system reboot after installation
 
-## Installation
+### Installation
 
-### Prerequisites
+#### Prerequisites
 
 - A fresh Debian-based system (Debian 11/12 or Ubuntu) installed via Netcup **Server Control Panel (SCP)**
 - `root` privileges
 
-### Steps
+#### Steps
 
 1. Run the following command to download and execute the installation script directly from the Netcup SCP control console:
    ```bash
-
    bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh)
+   ```
+
+2. **Alternative usage**:  
+   You can also copy the contents of the `.sh` file and paste it directly into the **Custom Script** section of the SCP control panel for installation.
+
+#### Customizable Variables
+
+Before running the script, you may need to modify the following variables in the script:
+
+- `{username}`: Set the default username for `qBittorrent`. Example: `sagiri`
+- `{password}`: Set the default password for `qBittorrent`. Example: `sagirisagiri`
+- `{webui_port}`: Set the Web UI port. Example: `18080`
+- `{connection_port}`: Set the connection port. Example: `55000`
+- `{cache}`: Set the disk cache value. Example: `-1` (auto)
