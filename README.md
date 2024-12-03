@@ -21,7 +21,5 @@ This script is designed to automate the installation and configuration of a dedi
 
 1. Run the following command to download and execute the installation script directly from the Netcup SCP control console:
    ```bash
-   #!/bin/bash
 
-   # 下载并执行远程脚本
    bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh)
