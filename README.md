@@ -11,7 +11,7 @@ This script automates the installation and configuration of a dedicated seedbox 
   - Default **password**: `sagirisagiri`
   - Default **Web UI port**: `18080`
   - Default **connection port**: `55000`
-  - **Disk cache**: `-1` (auto)
+  - **Disk cache**: `1024`
 - Sets up system to automatically start `qbittorrent-nox` on boot
 - Adjusts filesystem settings for optimized performance
 - Includes an option for automatic system reboot after installation
@@ -57,7 +57,7 @@ Before running the script, you may need to modify the following variables in the
 - `{password}`: Set the default password for `qBittorrent`. Example: `sagirisagiri`
 - `{webui_port}`: Set the Web UI port. Example: `18080`
 - `{connection_port}`: Set the connection port. Example: `55000`
-- `{cache}`: Set the disk cache value. Example: `-1` (auto)
+- `{cache}`: Set the disk cache value. Example: `1024`
 
 
 For the Chinese version, please refer to [简体中文](https://github.com/SAGIRIxr/SCP-Seedbox-Installer/blob/main/README_zh.md).
