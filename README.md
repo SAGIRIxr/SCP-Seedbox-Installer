@@ -33,6 +33,22 @@ This script automates the installation and configuration of a dedicated seedbox 
 2. **Alternative usage**:  
    You can also copy the contents of the `.sh` file and paste it directly into the **Custom Script** section of the SCP control panel for installation.
 
+    ```bash
+    cd /root && \
+    bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/Dedicated-Seedbox/main/Install.sh) -u {username} -p {password} -c {cache} -q 4.3.8 -l v1.2.14 -x && \
+    apt install -y curl htop vnstat && \
+    systemctl stop qbittorrent-nox@sagiri && \
+    systemctl disable qbittorrent-nox@sagiri && \
+    tune2fs -m 1 $(df -h / | awk 'NR==2 {print $1}') && \
+    sed -i 's/WebUI\\Port=[0-9]*/WebUI\\Port={webui_port}/' /home/sagiri/.config/qBittorrent/qBittorrent.conf && \
+    sed -i 's/Connection\\PortRangeMin=[0-9]*/Connection\\PortRangeMin={connection_port}/' /home/sagiri/.config/qBittorrent/qBittorrent.conf && \
+    sed -i '/\[Preferences\]/a General\\Locale=zh' /home/sagiri/.config/qBittorrent/qBittorrent.conf && \
+    sed -i '/\[Preferences\]/a Downloads\\PreAllocation=false' /home/sagiri/.config/qBittorrent/qBittorrent.conf && \
+    sed -i '/\[Preferences\]/a WebUI\\CSRFProtection=false' /home/sagiri/.config/qBittorrent/qBittorrent.conf && \
+    echo -e '\nsystemctl enable qbittorrent-nox@sagiri && reboot' >> /root/BBRx.sh && \
+    shutdown -r +1
+    ```
+
 #### Customizable Variables
 
 Before running the script, you may need to modify the following variables in the script:
@@ -42,3 +58,6 @@ Before running the script, you may need to modify the following variables in the
 - `{webui_port}`: Set the Web UI port. Example: `18080`
 - `{connection_port}`: Set the connection port. Example: `55000`
 - `{cache}`: Set the disk cache value. Example: `-1` (auto)
+
+
+For the Chinese version, please refer to [简体中文](https://github.com/SAGIRIxr/SCP-Seedbox-Installer/blob/main/README_zh.md).
