@@ -45,7 +45,7 @@
     echo -e '\nsystemctl enable qbittorrent-nox@{username} && reboot' >> /root/BBRx.sh && \
     shutdown -r +1
     ```
-    ！!!!!!!!!!请务必确保参数全部填写正确，否则SCP将会一直处于安装状态无法操作!!!!!!!!！
+   - ！!!!!!!!!!请务必确保参数全部填写正确，否则SCP将会一直处于安装状态无法操作!!!!!!!!！
 #可修改的变量
 
 在运行脚本之前，你可能需要修改脚本中的以下变量：
