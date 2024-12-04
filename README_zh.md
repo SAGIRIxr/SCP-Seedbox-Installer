@@ -30,8 +30,6 @@
 
 2. **另一种使用方式**：  
    你也可以直接将 `.sh` 文件的内容复制到 SCP 控制面板中的 **自定义脚本** 部分运行。
-
-   !!!!!!!!!!请务必确保参数全部填写正确，否则SCP将会一直处于安装状态无法操作!!!!!!!!!
     ```bash
     cd /root && \
     bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/Dedicated-Seedbox/main/Install.sh) -u {username} -p {password} -c {cache} -q 4.3.8 -l v1.2.14 -x && \
@@ -47,6 +45,7 @@
     echo -e '\nsystemctl enable qbittorrent-nox@{username} && reboot' >> /root/BBRx.sh && \
     shutdown -r +1
     ```
+    !!!!!!!!!!请务必确保参数全部填写正确，否则SCP将会一直处于安装状态无法操作!!!!!!!!!
 #可修改的变量
 
 在运行脚本之前，你可能需要修改脚本中的以下变量：
