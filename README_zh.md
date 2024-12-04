@@ -42,7 +42,7 @@
     sed -i '/\[Preferences\]/a General\\Locale=zh' /home/{username}/.config/qBittorrent/qBittorrent.conf && \
     sed -i '/\[Preferences\]/a Downloads\\PreAllocation=false' /home/{username}/.config/qBittorrent/qBittorrent.conf && \
     sed -i '/\[Preferences\]/a WebUI\\CSRFProtection=false' /home/{username}/.config/qBittorrent/qBittorrent.conf && \
-    echo -e '\nsystemctl enable qbittorrent-nox@sagiri && reboot' >> /root/BBRx.sh && \
+    echo -e '\nsystemctl enable qbittorrent-nox@{username} && reboot' >> /root/BBRx.sh && \
     shutdown -r +1
     ```
 #可修改的变量
