@@ -27,12 +27,31 @@ This script automates the installation and configuration of a dedicated seedbox 
 
 #### Steps
 
-1. Run the following command to download and execute the installation script directly from the Netcup SCP control console:
-   ```bash
-   bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh)
-   ```
+### 1. Direct Installation
+Run the following command in the Netcup SCP control console to download and execute the installation script:  
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh)
+```
 
-2. **Alternative usage**:  
+### 2. Custom Parameters
+You can specify the following options when running the script:  
+
+| Option | Description                      | Default Value   |
+|--------|----------------------------------|-----------------|
+| `-u`   | Username for qBittorrent         | `sagiri`        |
+| `-p`   | Password for qBittorrent WebUI   | `sagirisagiri`  |
+| `-c`   | Cache size (in MiB)              | `1024`          |
+| `-w`   | WebUI port                       | `18080`         |
+| `-o`   | Connection port                  | `55000`         |
+
+### Example Command
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh) -u myuser -p mypassword -c 2048 -w 8080 -o 60000
+```
+
+---
+
+ **Alternative usage**:  
    You can also copy the contents of the `.sh` file and paste it directly into the **Custom Script** section of the SCP control panel for installation.
 
     ```bash
@@ -60,3 +79,10 @@ Before running the script, you may need to modify the following variables in the
 - `{webui_port}`: Set the Web UI port. Example: `18080`
 - `{connection_port}`: Set the connection port. Example: `55000`
 - `{cache}`: Set the disk cache value. Example: `1024`
+
+
+
+
+
+
+
