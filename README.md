@@ -33,25 +33,8 @@ Run the following command in the Netcup SCP control console to download and exec
 bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh)
 ```
 
-### 2. Custom Parameters
-You can specify the following options when running the script:  
 
-| Option | Description                      | Default Value   |
-|--------|----------------------------------|-----------------|
-| `-u`   | Username for qBittorrent         | `sagiri`        |
-| `-p`   | Password for qBittorrent WebUI   | `sagirisagiri`  |
-| `-c`   | Cache size (in MiB)              | `1024`          |
-| `-w`   | WebUI port                       | `18080`         |
-| `-o`   | Connection port                  | `55000`         |
-
-### Example Command
-```bash
-bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh) -u myuser -p mypassword -c 2048 -w 8080 -o 60000
-```
-
----
-
- 3. **Alternative usage**:  
+ 2. **Alternative usage**:  
    You can also copy the contents of the `.sh` file and paste it directly into the **Custom Script** section of the SCP control panel for installation.
 
     ```bash
