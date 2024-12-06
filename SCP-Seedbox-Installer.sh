@@ -40,16 +40,27 @@ systemctl disable "qbittorrent-nox@$username"
 
 tune2fs -m 1 "$(df -h / | awk 'NR==2 {print $1}')"
 
-# 修改 qBittorrent 配置
+# 配置文件路径
 config_path="/home/$username/.config/qBittorrent/qBittorrent.conf"
-sed -i "s/WebUI\\Port=[0-9]*/WebUI\\Port=$webui_port/" "$config_path"
-sed -i "s/Connection\\PortRangeMin=[0-9]*/Connection\\PortRangeMin=$connection_port/" "$config_path"
-sed -i '/\[Preferences\]/a General\\Locale=zh' "$config_path"
-sed -i '/\[Preferences\]/a Downloads\\PreAllocation=false' "$config_path"
-sed -i '/\[Preferences\]/a WebUI\\CSRFProtection=false' "$config_path"
 
-# 设置重启脚本
+# 检查并等待配置文件生成
+while [ ! -f "$config_path" ]; do
+  echo "$config_path 不存在，正在等待 20 秒..."
+  sleep 20
+done
+
+# 修改配置
+sed -i "s/WebUI\\Port=[0-9]*/WebUI\\Port=$webui_port/" "$config_path" || echo "WebUI\\Port=$webui_port" >> "$config_path"
+sed -i "s/Connection\\PortRangeMin=[0-9]*/Connection\\PortRangeMin=$connection_port/" "$config_path" || echo "Connection\\PortRangeMin=$connection_port" >> "$config_path"
+grep -q "General\\Locale=zh" "$config_path" || echo "General\\Locale=zh" >> "$config_path"
+grep -q "Downloads\\PreAllocation=false" "$config_path" || echo "Downloads\\PreAllocation=false" >> "$config_path"
+grep -q "WebUI\\CSRFProtection=false" "$config_path" || echo "WebUI\\CSRFProtection=false" >> "$config_path"
+
+# 写入重启脚本
 echo -e "\nsystemctl enable qbittorrent-nox@$username && reboot" >> /root/BBRx.sh
+
+# 确保脚本可执行
+chmod +x /root/BBRx.sh
 
 # 定时重启
 shutdown -r +1
