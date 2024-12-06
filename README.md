@@ -51,7 +51,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installe
 
 ---
 
- **Alternative usage**:  
+ 3. **Alternative usage**:  
    You can also copy the contents of the `.sh` file and paste it directly into the **Custom Script** section of the SCP control panel for installation.
 
     ```bash
