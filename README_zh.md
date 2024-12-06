@@ -29,23 +29,8 @@
 bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh)
 ```
 
-### 2. 自定义参数
-运行脚本时可以指定以下选项：  
 
-| 参数    | 描述                              | 默认值          |
-|---------|-----------------------------------|-----------------|
-| `-u`    | qBittorrent 的用户名              | `sagiri`        |
-| `-p`    | qBittorrent WebUI 的密码          | `sagirisagiri`  |
-| `-c`    | 缓存大小（单位：MiB）             | `1024`          |
-| `-w`    | WebUI 端口                        | `18080`         |
-| `-o`    | 连接端口                          | `55000`         |
-
-### 示例命令
-```bash
-bash <(wget -qO- https://raw.githubusercontent.com/SAGIRIxr/SCP-Seedbox-Installer/main/SCP-Seedbox-Installer.sh) -u myuser -p mypassword -c 2048 -w 8080 -o 60000
-```
-
-3. **另一种使用方式**：  
+2. **另一种使用方式**：  
    你也可以直接将 `.sh` 文件的内容复制到 SCP 控制面板中的 **自定义脚本** 部分运行。
       - 请务必确保参数全部填写正确，否则SCP将会一直处于安装状态无法操作！
     ```bash
